@@ -1,0 +1,57 @@
+# ── Model weights (too large for git) ──────────────────────────────────────
+weights/
+
+# ── Virtual environment ────────────────────────────────────────────────────
+.venv/
+
+# ── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# ── Jupyter ────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Data — keep sample, ignore large production data ──────────────────────
+# Keep sample: data/tiles/PROV-000-000001.ndpi/ and data/embeddings/
+# Ignore any other slides/patients added later
+data/tiles/*/
+!data/tiles/PROV-000-000001.ndpi/
+data/embeddings/
+!data/embeddings/PROV-000-000001_pgp_slide.pt
+
+# Raw whole-slide images (never commit)
+*.ndpi
+*.svs
+*.tiff
+*.tif
+*.mrxs
+
+# ── Logs & outputs ─────────────────────────────────────────────────────────
+logs/
+*.log
+runs/
+output/
+checkpoints/
+
+# ── OS / editor ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── HuggingFace / torch cache ──────────────────────────────────────────────
+.cache/
+
+# ── External submodules — track via .gitmodules, not content ───────────────
+# (prov-gigapath has its own .git; add it as a submodule instead)
+# external/prov-gigapath/gigapath.egg-info/ is covered by *.egg-info above
